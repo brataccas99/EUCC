@@ -8,7 +8,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'chat-page', component: ChatPageComponent },
+  { path: 'chat', component: ChatPageComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'faq', component: FaqComponent },
   { path: '', component: WelcomeComponent },

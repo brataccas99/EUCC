@@ -1,23 +1,46 @@
-<div class="container">
-  <h1>Welcome to EU Contracts requirements checker using AI llama2</h1>
-  <div class="row">
-    <div class="col-md-6">
-      <img src="assets/images/ueflag.jpg" alt="Image 1" />
-      <button class="btn btn-primary" routerLink="/about">About</button>
-    </div>
-    <div class="col-md-6">
-      <img src="assets/images/contracts.jpg" alt="Image 2" />
-      <button class="btn btn-primary" routerLink="/chat-page">Chat Page</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <img src="assets/images/terms.jpg" alt="Image 3" />
-      <button class="btn btn-primary" routerLink="/contacts">Contacts</button>
-    </div>
-    <div class="col-md-6">
-      <img src="assets/images/stars.jpg" alt="Image 4" />
-      <button class="btn btn-primary" routerLink="/faq">FAQ</button>
+<section class="py-7 py-md-0 bg-hero bg-dark img-flag" id="chat">
+  <div class="container ">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+        <h1 class="heading-white text-capitalize">EU Contract Requirements Checker</h1>
+        <p class="lead py-3">A tool for your contracts validation, powered by AI</p>
+        <button class="btn btn-primary d-inline-flex flex-row align-items-center" routerLink="/chat">
+          Try now
+          <em class="ml-2" data-feather="arrow-right"></em>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<app-features></app-features>
+
+<section class="py-7 bg-dark section-angle top-right bottom-left" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="row pt-5 pricing-table">
+        <div class="col-12 mx-auto">
+          <div class="card-deck pricing-table">
+            <div class="card">
+              <div class="card-body">
+                <p class="text-light lead">About</p>
+              </div>
+            </div>
+
+            <div class="col-6" style="cursor: pointer;">
+              <a routerLink="/chat" class="text-light lead">Chat Page</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6" style="cursor: pointer;">
+              <a routerLink="/contacts" class="text-light lead">Contacts</a>
+            </div>
+            <div class="col-6" style="cursor: pointer;">
+              <a routerLink="/faq" class="text-light lead">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

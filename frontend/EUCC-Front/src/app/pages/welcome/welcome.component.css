@@ -1,0 +1,14 @@
+.grid-image {
+  width: 100%; /* Set the image size as required */
+  height: 150px; /* Set the fixed height for the images */
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-image:hover {
+  transform: scale(1.05); /* Increase image size on hover */
+}
+
+.img-flag {
+background-image: url('../../../assets/images/stars.jpeg');
+  background-size: cover;
+}
