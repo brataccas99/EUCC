@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
 
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -11,38 +12,57 @@ export class ContactsComponent {
   contactForm: FormGroup;
   formResponse: string | null = null;
   isLoading = false;
+  countries!: any[];
+  
   constructor(private fb: FormBuilder, private SharedService: SharedService) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required]],
+      country:['']
     });
   }
 
-  submitForm() {
+  ngOnInit(): void {
+    this.SharedService.getCountries().subscribe((data:any) => {
+      console.log(data)
+      this.countries = data;
+    });
+  }
+
+  onSubmit() {
     if (this.contactForm.valid) {
       this.isLoading = true;
-      this.formResponse = null;
-      const emailData = JSON.stringify({
-        name: this.contactForm.get('name')!.value,
-        email: this.contactForm.get('email')!.value,
-        message: this.contactForm.get('message')!.value,
-      });
-      setTimeout(() => {
-        this.SharedService.sendEmail(emailData).subscribe(
-          (response) => {
-            this.formResponse = 'success';
-            this.isLoading = false;
-            this.clearForm();
-          },
-          (error) => {
-            this.formResponse = 'error';
-            this.isLoading = false;
-          }
-        );
-      }, 3000);
+      const formData = new FormData();
+      const { value } = this.contactForm;
+      for (const key in value) {
+        formData.append(key, value[key]);
+      }
+  
+      this.SharedService.sendForm(formData).subscribe(
+        (response) => {
+          this.loadSpinner(response);
+        },
+        (error) => {
+          this.loadSpinner(error)
+        }
+      );
     }
   }
+
+  loadSpinner(e:any){
+    if (e.status === 200) {
+      this.formResponse = 'success';
+      this.isLoading = false;
+      this.clearForm();
+    } else {
+      this.formResponse = 'error';
+      this.isLoading = false;
+    }
+  }
+  
+  
+  
   clearForm() {
     this.contactForm.reset();
   }
