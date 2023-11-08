@@ -23,18 +23,24 @@ export class ContactsComponent {
     if (this.contactForm.valid) {
       this.isLoading = true;
       this.formResponse = null;
-      const email = this.contactForm.get('email')!.value;
-      this.SharedService.sendEmail(email).subscribe(
-        (response) => {
-          this.formResponse = 'success';
-          this.isLoading = false;
-          this.clearForm();
-        },
-        (error) => {
-          this.formResponse = 'error';
-          this.isLoading = false;
-        }
-      );
+      const emailData = JSON.stringify({
+        name: this.contactForm.get('name')!.value,
+        email: this.contactForm.get('email')!.value,
+        message: this.contactForm.get('message')!.value,
+      });
+      setTimeout(() => {
+        this.SharedService.sendEmail(emailData).subscribe(
+          (response) => {
+            this.formResponse = 'success';
+            this.isLoading = false;
+            this.clearForm();
+          },
+          (error) => {
+            this.formResponse = 'error';
+            this.isLoading = false;
+          }
+        );
+      }, 3000);
     }
   }
   clearForm() {

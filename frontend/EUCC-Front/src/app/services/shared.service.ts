@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/env/envinronments';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,11 @@ export class SharedService {
 
   constructor(private http: HttpClient) {}
 
-  sendEmail(email: string) {
-    return this.http.post(this.scriptURL, { email });
+  sendEmail(emailData: any): Observable<any> {
+    const params = new HttpParams({
+      fromObject: emailData,
+    });
+
+    return this.http.get(this.scriptURL, { params });
   }
 }
