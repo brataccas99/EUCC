@@ -1,91 +1,41 @@
 <div class="container">
-  <h1>Frequently Asked Questions</h1>
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button
-            class="btn btn-link"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            What is the EU Contracts Requirements Checker?
-          </button>
-        </h2>
-      </div>
-
-      <div
-        id="collapseOne"
-        class="collapse show"
-        aria-labelledby="headingOne"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          The EU Contracts Requirements Checker is a tool that uses Llama2 to
-          check if a given contract complies with the requirements of the
-          European Union.
+  <div class="row">
+    <div class="col-md-6 mx-auto text-center">
+      <h2>Frequently asked questions</h2>
+      <p class="text-muted lead">Answers to most common questions.</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-10 mx-auto">
+      <div class="row">
+        <div class="col-md-6 mb-5">
+          <h2>Can I try it for free?</h2>
+          <p class="text-muted">Absolutely yes.</p>
+        </div>
+        <div class="col-md-6 mb-5">
+          <h2>Do you have hidden fees?</h2>
+          <p class="text-muted">As a checker software, transparancy is our goal, nothing is hidden.</p>
+        </div>
+        <div class="col-md-6 mb-5">
+          <h2>Where will my contract be kept while uploaded?</h2>
+          <p class="text-muted">To better be compliant with GDPR we decided to don't store any contract nor personal
+            info for now, changes may be applied later.</p>
+        </div>
+        <div class="col-md-6 mb-5">
+          <h2>How often do you release updates?</h2>
+          <p class="text-muted">Anytime the Eu general requirements updates, this checker is updated automatically.</p>
+        </div>
+        <div class="col-md-6 mb-5">
+          <h2>What is the IA used?</h2>
+          <p class="text-muted">An open source larga language model powered by Meta, llama2.</p>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button
-            class="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
-          >
-            How do I use the EU Contracts Requirements Checker?
-          </button>
-        </h2>
-      </div>
-      <div
-        id="collapseTwo"
-        class="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          To use the EU Contracts Requirements Checker, simply upload your
-          contract to the tool and it will check if it complies with the
-          requirements of the European Union.
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button
-            class="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
-          >
-            What are the requirements of the European Union for contracts?
-          </button>
-        </h2>
-      </div>
-      <div
-        id="collapseThree"
-        class="collapse"
-        aria-labelledby="headingThree"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          The requirements of the European Union for contracts vary depending on
-          the type of contract and the parties involved. The EU Contracts
-          Requirements Checker checks for compliance with all relevant EU
-          regulations and directives.
-        </div>
-      </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6 mx-auto text-center">
+      <h2 class="mb-4">Have questions?</h2>
+      <button routerLink="/contacts" class="btn btn-primary">Contact us</button>
     </div>
   </div>
 </div>

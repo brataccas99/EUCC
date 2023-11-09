@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 
 :root {
@@ -2673,7 +2673,7 @@ fieldset:disabled a.btn {
 
 .btn-primary:focus,
 .btn-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(29, 233, 182, 0.5);
+  box-shadow: 0 0 0 0 rgba(29, 233, 182, 0.5);
 }
 
 .btn-primary.disabled,
@@ -2694,7 +2694,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(29, 233, 182, 0.5);
+  box-shadow: 0 0 0 0 rgba(29, 233, 182, 0.5);
 }
 
 .btn-secondary {
@@ -3168,7 +3168,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-danger:focus,
 .btn-outline-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 23, 68, 0.5);
+  box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.5);
 }
 
 .btn-outline-danger.disabled,
@@ -3188,7 +3188,7 @@ fieldset:disabled a.btn {
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
 .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
 .show>.btn-outline-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 23, 68, 0.5);
+  box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.5);
 }
 
 .btn-outline-light {
@@ -3206,7 +3206,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-light:focus,
 .btn-outline-light.focus {
-  box-shadow: 0 0 0 0.2rem rgba(236, 239, 241, 0.5);
+  box-shadow: 0 0 0 0 rgba(236, 239, 241, 0.5);
 }
 
 .btn-outline-light.disabled,
@@ -3226,7 +3226,7 @@ fieldset:disabled a.btn {
 .btn-outline-light:not(:disabled):not(.disabled):active:focus,
 .btn-outline-light:not(:disabled):not(.disabled).active:focus,
 .show>.btn-outline-light.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(236, 239, 241, 0.5);
+  box-shadow: 0 0 0 0 rgba(236, 239, 241, 0.5);
 }
 
 .btn-outline-dark {
@@ -3244,7 +3244,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-dark:focus,
 .btn-outline-dark.focus {
-  box-shadow: 0 0 0 0.2rem rgba(17, 23, 26, 0.5);
+  box-shadow: 0 0 0 0 rgba(17, 23, 26, 0.5);
 }
 
 .btn-outline-dark.disabled,
@@ -3264,7 +3264,7 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus,
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show>.btn-outline-dark.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(17, 23, 26, 0.5);
+  box-shadow: 0 0 0 0 rgba(17, 23, 26, 0.5);
 }
 
 .btn-link {
