@@ -1,0 +1,53 @@
+.page-container {
+  background: url('../../../assets/images/europeSpace.jpg') center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  padding: 70px;
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 85vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-control {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1%;
+  border-radius: 1px;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #211f1f;
+  display: flex;
+  align-items: center;
+  padding-left: 30%;
+}
+
+.send-btn {
+  background-color: rgb(25, 195, 125);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.auto-expand {
+  resize: none;
+  overflow: hidden;
+}

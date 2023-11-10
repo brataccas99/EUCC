@@ -16,6 +16,8 @@ import { IconsModule } from './shared/icons/icons.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MessageListComponent } from './shared/message-list/message-list.component';
+import { MessageItemComponent } from './shared/message-item/message-item.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AboutComponent,
     FaqComponent,
     ContactsComponent,
+    MessageListComponent,
+    MessageItemComponent,
   ],
   imports: [
     BrowserModule,

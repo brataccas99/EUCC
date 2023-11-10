@@ -1,18 +1,14 @@
-<!-- Chat page HTML code -->
-<div class="chat-container">
-  <div class="chat-header">
-    <h1>Chat with GPT</h1>
-  </div>
-  <div class="chat-messages">
-    <div class="message">
-      <p>Hello, how can I help you today?</p>
+<div class="page-container">
+  <div class="chat-container">
+    <div class="chat-list ml-3">
+      <app-message-list [messages]="messages"></app-message-list>
     </div>
-    <div class="message">
-      <p>What would you like to talk about?</p>
+    <div class="chat-control">
+      <div class="chat-input">
+        <textarea [rows]="calculateRows()" [cols]="calculateCols()" class="form-control auto-expand" style="width:50%;"
+          (input)="adjustTextareaSize($event)" [(ngModel)]="message.content"></textarea>
+        <button class="btn btn-success send-btn" (click)="sendMessage()">Send</button>
+      </div>
     </div>
-  </div>
-  <div class="chat-input">
-    <input type="text" placeholder="Type your message here..." />
-    <button>Send</button>
   </div>
 </div>
