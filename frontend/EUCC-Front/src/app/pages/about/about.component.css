@@ -1,0 +1,5 @@
+.page-container {
+  background: url('../../../assets/images/ueflag.jpg') center center fixed;
+  background-size: cover;
+  height: 80vh;
+}

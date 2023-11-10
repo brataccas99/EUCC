@@ -1,16 +1,33 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Message } from '../../../models/message';
+import {
+  Component,
+  Input,
+  ElementRef,
+  AfterViewChecked,
+  ChangeDetectorRef,
+  ViewChild,
+} from '@angular/core';
+import { Message } from 'src/models/message';
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css'],
 })
-export class MessageListComponent implements OnInit {
-  @Input('messages')
-  messages!: Message[];
+export class MessageListComponent implements AfterViewChecked {
+  @Input() messages: Message[] = [];
+  @ViewChild('messageList') messageList!: ElementRef;
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {}
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  private scrollToBottom(): void {
+    if (this.messageList) {
+      const messageListElement = this.messageList.nativeElement as HTMLElement;
+      messageListElement.scrollTop = messageListElement.scrollHeight;
+      this.cdr.detectChanges();
+    }
+  }
 }

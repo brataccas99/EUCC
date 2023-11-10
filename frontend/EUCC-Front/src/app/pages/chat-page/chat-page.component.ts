@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ChangeDetectorRef,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Message } from '../../../models/message';
 
 @Component({
@@ -7,8 +13,12 @@ import { Message } from '../../../models/message';
   styleUrls: ['./chat-page.component.css'],
 })
 export class ChatPageComponent implements OnInit {
+  @ViewChild('messageList') messageList: ElementRef | undefined;
+
   message: Message = new Message('', 'assets/images/bot.png');
   messages: Message[] = [];
+
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {}
 
@@ -22,10 +32,13 @@ export class ChatPageComponent implements OnInit {
       )
     );
     this.message.content = '';
-    const textarea = document.querySelector(
-      '.auto-expand'
-    ) as HTMLTextAreaElement;
-    textarea.style.height = 'auto';
+
+    // Scroll to the last message
+    if (this.messageList) {
+      this.cdRef.detectChanges(); // Trigger change detection
+      const messageListElement = this.messageList.nativeElement as HTMLElement;
+      messageListElement.scrollTop = messageListElement.scrollHeight;
+    }
   }
 
   calculateRows(): number {
