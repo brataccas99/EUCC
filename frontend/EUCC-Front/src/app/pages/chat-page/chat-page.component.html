@@ -5,9 +5,11 @@
     </div>
     <div class="chat-control">
       <div class="chat-input">
-        <textarea [rows]="calculateRows()" [cols]="calculateCols()" class="form-control auto-expand" style="width:50%;"
-          (input)="adjustTextareaSize($event)" [(ngModel)]="message.content"></textarea>
-        <button class="btn btn-success send-btn" (click)="sendMessage()">Send</button>
+        <textarea [rows]="calculateRows()" [cols]="calculateCols()" class="form-control auto-expand"
+          style="width:50%; height:42px;" (input)="adjustTextareaSize($event)" [(ngModel)]="message.content"
+          (keydown.enter)="sendMessage()" (focus)="onTextareaFocus()"></textarea>
+        <button class="btn btn-success send-btn" (click)="sendMessage()" style="width: 7%;"><i
+            class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>

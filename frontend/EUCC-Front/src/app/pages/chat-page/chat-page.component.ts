@@ -9,10 +9,15 @@ import { Message } from '../../../models/message';
 export class ChatPageComponent implements OnInit {
   message: Message = new Message('', 'assets/images/bot.png');
   messages: Message[] = [];
+  isTextareaFocused = false;
 
   ngOnInit() {}
 
-  public sendMessage(): void {
+  public sendMessage(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+
     this.message.timestamp = new Date().getTime();
     this.messages.push(
       new Message(
@@ -26,9 +31,8 @@ export class ChatPageComponent implements OnInit {
     const textarea = document.querySelector(
       '.auto-expand'
     ) as HTMLTextAreaElement;
-    textarea.style.height = 'auto';
+    textarea.style.height = '42px';
   }
-
   calculateRows(): number {
     return this.message.content.split('\n').length;
   }
@@ -42,6 +46,18 @@ export class ChatPageComponent implements OnInit {
 
   adjustTextareaSize(event: any): void {
     const textarea = event.target;
-    textarea.style.height = `${textarea.scrollHeight}px`;
+    if (
+      textarea.value === '' ||
+      (!this.isTextareaFocused &&
+        textarea.scrollHeight === textarea.clientHeight)
+    ) {
+      textarea.style.height = '42px';
+    } else {
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }
+
+  onTextareaFocus(): void {
+    this.isTextareaFocused = true;
   }
 }

@@ -44,7 +44,8 @@
   color: #211f1f;
   display: flex;
   align-items: center;
-  padding-left: 30%;
+  padding-left: 28%;
+  margin: 0 auto;
 }
 
 .send-btn {
@@ -57,7 +58,11 @@
 }
 
 .auto-expand {
-  resize: auto;
-  overflow: hidden;
-  height: '4%';
+  background-color: #343a40;
+    margin-bottom: 5px;
+    padding: 1%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    max-width: 70%;
 }
