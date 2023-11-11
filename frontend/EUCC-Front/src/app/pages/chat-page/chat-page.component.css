@@ -2,6 +2,15 @@
   background: url('../../../assets/images/europeSpace.jpg') center center fixed;
   background-size: cover;
   height: 100vh;
+  &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+}
 }
 
 .chat-container {
@@ -48,6 +57,7 @@
 }
 
 .auto-expand {
-  resize: none;
+  resize: auto;
   overflow: hidden;
+  height: '4%';
 }
