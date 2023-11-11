@@ -1,11 +1,18 @@
 export class Message {
   content: string;
-  timestamp: number | undefined;
   avatar: string;
+  sender: 'user' | 'chatbot';
+  timestamp: number | undefined;
 
-  constructor(content: string, avatar: string, timestamp?: number) {
+  constructor(
+    content: string,
+    avatar: string,
+    sender: 'user' | 'chatbot',
+    timestamp?: number
+  ) {
     this.content = content;
-    this.timestamp = timestamp;
     this.avatar = avatar;
+    this.sender = sender;
+    this.timestamp = timestamp;
   }
 }

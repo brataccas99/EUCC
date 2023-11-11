@@ -55,14 +55,16 @@
   padding: 8px;
   margin-left: 10px;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .auto-expand {
   background-color: #343a40;
-    margin-bottom: 5px;
-    padding: 1%;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    max-width: 70%;
+  color: #fff;
+  margin-bottom: 5px;
+  padding: 1%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  max-width: 70%;
 }

@@ -7,7 +7,7 @@ import { Message } from '../../../models/message';
   styleUrls: ['./chat-page.component.css'],
 })
 export class ChatPageComponent implements OnInit {
-  message: Message = new Message('', 'assets/images/bot.png');
+  message: Message = new Message('', '', 'user');
   messages: Message[] = [];
   isTextareaFocused = false;
 
@@ -19,12 +19,10 @@ export class ChatPageComponent implements OnInit {
     }
 
     this.message.timestamp = new Date().getTime();
+
+    // Set the sender as 'user'
     this.messages.push(
-      new Message(
-        this.message.content,
-        'assets/images/user.png',
-        this.message.timestamp
-      )
+      new Message(this.message.content, 'user', 'user', this.message.timestamp)
     );
 
     this.message.content = '';

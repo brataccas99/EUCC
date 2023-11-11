@@ -8,6 +8,20 @@ li.list-group-item {
   max-width: 70%;
 }
 
+.user-message {
+  background-color: #aedfff;
+  color: #000;
+  margin-left: 25%;
+  margin-right: 20%;
+}
+
+.chatbot-message {
+  background-color: #e0e0e0;
+  color: #000;
+  margin-left: 20%;
+  margin-right: 25%;
+}
+
 img.avatar {
   width: 30px;
   height: 30px;

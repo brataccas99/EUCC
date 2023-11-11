@@ -1,9 +1,11 @@
-<li class="list-group-item">
-  <i class="fa-regular fa-user" style="color:white"></i>
+<li class="list-group-item"
+  [ngClass]="{ 'user-message': message.sender === 'user', 'chatbot-message': message.sender === 'chatbot' }">
+  <i *ngIf="message.sender === 'user'" class="fa-regular fa-user" style="color:white"></i>
+  <i *ngIf="message.sender === 'chatbot'" class="fa-regular fa-robot" style="color:white"></i>
   <div class="message mr-3 ml-3">
-    {{message.content}}
+    {{ message.content }}
   </div>
   <div class="timeform">
-    <span class="timestamp">{{message.timestamp | date : 'HH:mm:ss' }}</span>
+    <span class="timestamp">{{ message.timestamp | date : 'HH:mm:ss' }}</span>
   </div>
 </li>
